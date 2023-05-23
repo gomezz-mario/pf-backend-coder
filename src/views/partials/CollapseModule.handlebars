@@ -1,0 +1,46 @@
+<div class="collapse-down-module__container">
+	<button class="btn-collapse-down-module">
+		<div>
+			<span style="color:#000000; font-size: 16px;">{{this.title}}</span>
+			{{#if optionSelected}}
+				<span style="color:#440099; font-size: 14px;">{{optionSelected}}</span>
+			{{/if}}
+		</div>
+		<i class="bi bi-chevron-down"></i>
+	</button>
+	<div class="collapse-down-module__content collapse">
+		{{#each this.options}}
+			{{> OptionElement}}
+		{{/each}}
+	</div>
+</div>
+
+<style>
+	.collapse-down-module__container{
+		width: 100%;
+	}
+	.btn-collapse-down-module{
+		display: flex; 
+		align-items:center; 
+		justify-content:space-between; 
+		width: 100%; 
+		padding: 10px 20px;
+		background:none; 
+		border: none; 
+		border-bottom: 1px solid #fafafa;
+	}
+	.btn-collapse-down-module div{
+		display: flex; 
+		flex-direction: column;
+		justify-content: flex-start; 
+		align-items: flex-start;	
+	}
+	.collapse-down-module__content{
+		width: 100%;
+		padding: 10px 20px; 
+		border-bottom: 1px solid #fafafa;
+	}
+	.collapse-down-module__container .collapse{
+		display: none;
+	}
+</style>

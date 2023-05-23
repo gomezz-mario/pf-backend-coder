@@ -1,0 +1,55 @@
+<div class="collapse-menu__container">
+	<button class="btn-menu btn-open-menu"><i class="bi bi-toggles2"></i><span>FILTRAR</span></button>
+	<button class="btn-menu btn-back-to-collapse-menu collapse"><i class="bi bi-arrow-left-short"></i></button>
+	<div class="collapse-menu__content collapse">
+		{{> Menu}}
+	</div>
+</div>
+
+<style>
+	.collapse-menu__container{
+		padding: 20px 20px;
+		padding-bottom: 0;
+	}
+	.collapse-menu__container,
+	.collapse-menu__content{
+		width: 100%;
+	}
+
+	.collapse-menu__container .collapse{
+		display: none;
+	}
+
+	.btn-menu{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 100%;
+		font-size: 22px;
+		background: none;
+		border: none;
+	}
+	.btn-open-menu i{
+		font-size: 22px;
+		margin-right: 16px;
+	}
+	.btn-open-menu
+	{
+		padding: 20px 0px;
+		justify-content: center;
+		background: #440099;
+		border-color: #440099;
+		border-radius: 2px;
+		cursor: pointer;
+	}
+	.btn-open-menu span,
+	.btn-open-menu i{
+		background: #440099;
+		color: #fff;
+	}
+	.btn-back-to-collapse-menu{
+		color: #333;
+		font-size: 60px;
+	}
+
+</style>

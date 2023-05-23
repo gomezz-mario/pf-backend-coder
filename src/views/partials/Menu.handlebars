@@ -1,0 +1,18 @@
+<div class="menu__container">
+	<div class="menu__content">
+		{{#each this.menu.searchOptions}}
+			{{> CollapseModule}}
+		{{/each}}
+	</div>
+</div>
+
+
+<style>
+	.menu__container,
+	.menu__content{
+		width: 100%;
+	}
+
+</style>
+
+<script src="/js/index.js"></script>

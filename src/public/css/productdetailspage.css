@@ -1,0 +1,137 @@
+.product-details__container{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+.product-details__content{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+.product-details__image__container{
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	padding: 20px;
+}
+.product-details__image__content{
+	width: 500px;
+	overflow: hidden;
+	position: relative;
+	border-radius: 5px;
+}
+.product-details__details__container{
+	display: flex;
+	height: max-content;
+	min-height: 400px;
+	width: 100%;
+	padding: 20px;
+}
+.product-details__details__content{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 300px;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+.expanded{
+	display: flex;
+	flex-grow: 1;
+}
+.product-details__title{
+	font-size: 22px;
+	font-weight: 500;
+}
+.product-details__description{
+	margin-top: 10px;
+	font-size: 15px;
+	font-weight: normal;
+	line-height: 20px;
+	letter-spacing: -0.18px;
+	display: -webkit-box;
+	-webkit-line-clamp: 12;
+	overflow: hidden;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	-webkit-box-orient: vertical;
+	padding-top: 5px !important;
+}
+.product-details-price__container{
+	margin-top: 10px;
+}
+.tag-old-price{
+	box-sizing: border-box;
+	min-height: 0px;
+	min-width: 0px;
+	text-decoration: line-through;
+	font-size: 24px;
+	line-height: 1.66;
+	letter-spacing: -0.26px;
+	color: #888888;
+}
+.tag-discount{
+	align-self: center;
+	border-radius: 2px;
+	padding: 2px 3px;
+	background-color: #d93175;
+	line-height: 1;
+	font-size: 18px;
+	letter-spacing: -0.28px;
+	color: #ffffff;
+}
+.tag-price{
+	font-size: 34px;
+	margin-top: 10px;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: -0.32px;
+	text-align: center;
+}
+#btn-add-to-cart{
+	font-size: 18px;
+	font-weight: 600;
+	border: none;
+	width: 100%;
+	color: #fff;
+	padding: 10px 0;
+	background: #440099;
+	cursor: pointer;
+	margin-top: 20px;
+}
+#btn-delete{
+	font-size: 18px;
+	font-weight: 600;
+	border: none;
+	width: 100%;
+	color: #fff;
+	padding: 10px 0;
+	background: #ff0000;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+
+@media(max-width: 940px){
+	.product-details__content{
+		flex-direction: column;
+	}
+	.product-details__image__container,
+	.product-details__details__container{
+		justify-content: center;
+	}
+	.product-details__image__content,
+	.product-details__details__content{
+		background: none;
+		border: none;
+		width: 100%;
+		max-width: 500px;
+	}
+	.product-details__details__content{
+		height: 100%;
+		max-height: 300px;
+	}
+}

@@ -1,0 +1,56 @@
+<div class="recovery-page__container">
+	<div class="recovery-page__content">
+		<!-- RECOVERY FORM -->
+		<form class="form__container" id="form-recovery">
+			<div class="form__content">
+				<h3 class="form__title">Recuperar cuenta</h3>
+				<!-- DATOS PERSONALES -->
+				<div class="form__section">
+					<div class="fields">
+						<div class="field__container">
+							<label>Email</label>
+							<div class="field">
+								<input type="email" placeholder="Ingresa tu email" name="email">
+							</div>
+						</div>
+					</div>
+					<div class="form__buttons">
+						<button id="btn-enviar">Enviar</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<style>
+	.recovery-page__container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		background: #fafafa;
+		height: 100%;
+		min-height: 100vh;
+		background-image: url('/images/bg-login.png');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
+	.recovery-page__content{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+		width: 100%;
+		max-width: 1400px;
+	}
+	@media(max-width: 915px){
+		.recovery-page__content{
+			justify-content: center;
+		}
+		.recovery-page__content{
+			background-image: none;
+		}
+	}
+</style>

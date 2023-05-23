@@ -1,0 +1,43 @@
+<div class="product-container">
+	<a href="/views/product-details/{{this._id}}" style="width: 100%">
+		<div class="product-content">
+			<div class="product-image__container">
+				{{#if this.paymentMethod}}
+					<img class="img-product__financiacion" src="/images/{{this.paymentMethod}}.webp" alt={{this.paymentMethod}}>
+				{{/if}}
+				{{#if this.shipping}}
+					<img class="img-product__envio" src="/images/{{this.shipping}}.webp" alt={{this.shipping}}>
+				{{/if}}
+				<img class="img-product" src={{this.thumbnails}} alt={{this.name}}>
+			</div>
+			<div class="product-details__container">
+				<span class="product-description">{{this.description}}</span>
+				<div class="product-price">
+					{{#if this.discount_percent}}
+						<div class="product-price__discount">
+							<span class="old-price">${{this.old_price}}</span>
+							<span style="width: 4px; height: 0;"></span>
+							<span class="tag-discount">{{this.discount_percent}}% OFF</span>
+						</div>
+					{{/if}}
+					<span class="tag-price">${{this.price}}</span>
+				</div>
+				<div style="display: flex; flex-grow: 1;"></div>
+				<div class="product-shiping">
+					{{#if llega_hoy}}
+						<span class="tag-shiping" style="font-weight: 600;">Llega HOY!</span>
+					{{/if}}
+					{{#if llega_maniana}}
+						<span class="tag-shiping">Llega mañana</span>
+					{{/if}}
+					{{#if retiralo_ya}}
+						<span class="tag-shiping" style="font-weight: 600;">Retiralo YA!</span>
+					{{/if}}
+					{{#if retira_maniana}}
+						<span class="tag-shiping">Retiralo mañana</span>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</a>
+</div>

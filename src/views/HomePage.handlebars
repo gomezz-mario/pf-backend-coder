@@ -1,0 +1,19 @@
+<div class="homepage__container">
+	{{> Header}}
+	<div class="homepage__content">		
+		<div class="categories__container">
+			<div class="categories__content">
+				{{#each categories}}
+				<a class="category-card__container" href={{this.link}}>
+					<div class="category-card__content">
+						<div class="category__image__container">
+							<img src={{this.image}} alt={{this.title}} class="category__image">
+						</div>
+						<div class="category__title">{{this.title}}</div>
+					</div>
+				</a>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</div>

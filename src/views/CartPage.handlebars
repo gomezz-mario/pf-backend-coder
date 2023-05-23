@@ -1,0 +1,253 @@
+{{> Header}}
+<div class="page__container">
+	<div class="page__content">
+		<div class="cart__container">
+			<div class="cart__content">
+				{{#if cart.products.length}}
+					{{#each cart.products}}
+						<div class="card-product__container">
+							<div class="card-product__content">
+								<div class="product__container">
+									<div class="product-image__container">
+										<img class="product__image" src={{this.thumbnails}} alt={{this.title}} >
+									</div>
+									<div class="product-data__container">
+										<span class="product__title">{{this.title}}</span>
+										<p class="product__description">{{this.description}}</p>
+										<div class="product__options-to-cart">
+											<button class="btn-remove-to-cart" data-pid={{this._id}}>Eliminar</button>
+										</div>
+									</div>
+								</div>
+								<div class="product-quantity__container">
+									<div class="product-quantity__counter" data-pid={{this._id}} data-quantity={{this.quantity}}>
+										<button class="btn-count remove">-</button>
+										<span class="product__quantity">{{this.quantity}}</span>
+										<button class="btn-count add">+</button>
+									</div>
+									<span class="product__stock">10 disponibles</span>
+								</div>
+								<div class="product-price__container">
+									<div class="product-discount">
+										<span class="text-discount">-{{this.discount_percent}}%</span>
+										<span class="text-old-price">${{this.old_price}}</span>
+									</div>
+									<span class="text-price">${{this.price}}</span>
+								</div>
+							</div>
+						</div>
+					{{/each}}
+				{{else}}
+					<span>No hay productos en el carrito</span>
+				{{/if}}
+			</div>
+		</div>
+		{{#if cart.products.length}}
+		<div style="display: flex;  justify-content: flex-end; width: 100%; padding: 10px;">
+			<div style="display: flex; width: 40%; padding: 10px; border-bottom: 1px solid #a191b6;">
+				<div style="display: flex; justify-content: flex-end; align-items: center; width: 100%;">
+					<span>Envío</span>
+					<div style="display: flex; justify-content: flex-end; padding: 0 20px; width: 100%; max-width: 200px;">
+						<span class="text-price">${{cart.total_envio}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div style="display: flex;  justify-content: flex-end; width: 100%; padding: 10px;">
+			<div style="display: flex; width: 40%; padding: 10px; border-bottom: 1px solid #a191b6;">
+				<div style="display: flex; justify-content: flex-end; align-items: center; width: 100%;">
+					<span>Total con envío</span>
+					<div style="display: flex; justify-content: flex-end; padding: 0 20px; width: 100%; max-width: 200px;">
+						<span class="text-price">${{this.cart.total}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div style="display: flex;  justify-content: flex-end; width: 100%; padding: 20px;">
+			<button id="btn-purchase">COMPRAR</button>
+		</div>
+
+		{{/if}}
+
+		
+	</div>
+</div>
+
+<style>
+	.page__container{
+		padding: 50px 0;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: calc(100vh - 92px);
+		background: #c680ff;
+	}
+	.page__content{
+		padding: 15px;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: max-content;
+		max-width: 1400px;
+		background: #fff;
+	}
+	.cart__container{
+		display: flex;
+		flex-direction: column;
+		padding: 10px;
+		width: 100%;
+	}
+	.cart__content{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	.card-product__container{
+		display: flex;
+		width: 100%;
+		padding: 10px;
+		background: #fff;
+		border-top: 1px solid #a191b6;
+	}
+	.card-product__container:last-child{
+		border-bottom: 1px solid #a191b6;
+	}
+	.card-product__content{
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.product__container{
+		display: flex;
+	}
+	.product-image__container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 150px;
+		height: 150px;
+		overflow: hidden;
+		
+	}
+	.product__image{
+		object-fit: cover;
+		object-position: center;
+		width: 100%;
+		height: 100%;
+	}
+	.product__title{
+		font-size: 18px;
+		font-weight: 500;
+		color: #000;
+		margin-bottom: 10px;
+	}
+	.product-data__container{
+		display: flex;
+		flex-direction: column;
+		padding: 0 20px;
+		width: 100%;
+		height: 100%;
+		max-width: 400px;
+	}
+	.product__options-to-cart{
+		display: flex;
+		justify-content: flex-start;
+		gap: 5px;
+		width: 100%;
+	}
+	.btn-remove-to-cart{
+		font-size: 12px;
+		color: #440099;
+		cursor: pointer;
+		background: none;
+		border: none;
+		padding: 0;
+	}
+	.product__description{
+		font-size: 14px;
+		font-weight: 400;
+		color: #333;
+		margin-bottom: 10px;
+		line-height: 20px;
+    	height: 60px;
+    	letter-spacing: -0.18px;
+    	overflow: hidden;
+    	overflow-x: hidden;
+    	overflow-y: hidden;
+    	display: -webkit-box;
+    	-webkit-line-clamp: 5;
+    	-webkit-box-orient: vertical;
+	}
+	.product-quantity__container{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 0 20px;
+	}
+	.product-quantity__counter{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 100px;
+		width: 100%;
+	}
+	.btn-count{
+		display: flex;
+		padding: 10px;
+		font-size: 18px;
+		color: #000;
+		border: none;
+		background: none;
+		cursor: pointer;
+	}
+	.product__quantity{
+		font-size: 18px;
+		color: #000;
+	}
+	.product__stock{
+		font-size: 12px;
+		color: #666;
+	}
+	.product-price__container{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 0 20px;
+	}
+	.product-discount{
+		display: flex;
+		gap: 5px;
+		margin-bottom: 4px;
+	}
+	.text-discount{
+		font-size: 14px;
+		color: #00a650;
+	}
+	.text-old-price{
+		font-size: 14px;
+		color: #666;
+		text-decoration: line-through;
+	}
+	.text-price{
+		font-size: 26px;
+	}
+	#btn-purchase{
+		 display: flex; 
+		 justify-content: center; 
+		 align-items: center; 
+		 width: 150px; 
+		 height: 40px; 
+		 background: #440099; 
+		 color: #fff; 
+		 font-size: 18px; 
+		 font-weight: 500; 
+		 border: none; 
+		 outline: none; 
+		 border-radius: 4px; 
+		 cursor: pointer;
+	}
+</style>

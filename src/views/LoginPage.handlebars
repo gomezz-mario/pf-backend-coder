@@ -1,0 +1,66 @@
+<div class="login-page__container">
+	<div class="login-page__content">
+		<!-- LOGIN FORM -->
+		<form class="form__container form" id="form-login">
+			<div class="form__content">
+				<h3 class="form__title">Inicia Sesión</h3>
+				<div class="fields">
+					<div class="field__container">
+						<label>Email</label>
+						<div class="field">
+							<input type="email" placeholder="Ingresa tu email" name="email">
+						</div>
+					</div>
+					<div class="field__container">
+						<label>Contraseña</label>
+						<div class="field">
+							<input type="password" placeholder="Ingresa tu contraseña" name="password">
+						</div>
+					</div>
+				</div>
+				<div class="form-link__container">
+					<a class="link" href="/views/user-recovery">Olvidaste tu contraseña?</a>
+				</div>
+				<div class="form__buttons">
+					<button id="btn-login">Iniciar sesión</button>
+				</div>			
+				<div class="form-link__container" style="margin-bottom: 0;">
+					<span class="link">Aún no tienes cuenta? <a href="/views/user-register">Regístrate.</a></span>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<style>
+	.login-page__container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		background: #fafafa;
+		height: 100%;
+		min-height: 100vh;
+		background-image: url('/images/bg-login.png');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
+	.login-page__content{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+		width: 100%;
+		max-width: 1400px;
+	}
+	@media(max-width: 915px){
+		.login-page__content{
+			justify-content: center;
+		}
+		.login-page__container{
+			background-image: none;
+		}
+	}
+	
+</style>

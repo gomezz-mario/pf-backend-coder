@@ -1,0 +1,109 @@
+{{> Header}}
+<div class="page__container">
+	<div class="page__content">
+		{{#if allUsers.length}}
+			<div style="display: flex; justify-content: flex-end; width: 100%; margin-bottom: 25px;">
+				<button id="btn-delete-users" style="display: flex; justify-content: center; align-items: center; background: #333; color: #fff; border: none; padding: 10px; border-radius: 5px;">Borrar usuarios inactivos</button>
+			</div>
+			<div style="display: flex; gap: 20px; width: 100%; background: #333; color: #fff; font-weight: 500; margin-bottom: 10px; padding: 10px;">
+				<span style="display: flex; width: 300px;">Id</span>
+				<span style="display: flex; width: 200px;">Nombre completo</span>
+				<span style="display: flex; width: 300px;">Email</span>
+				<span style="display: flex; width: 120px;">Inactividad</span>
+				<span style="display: flex; width: 200px;">Role</span>
+			</div>
+			{{#each allUsers}}
+			<div class="card-user__container">
+				<div class="card-user__content content-data">
+					<span style="display: flex; width: 300px; align-items: center;">{{this._id}}</span>
+					<span style="display: flex; width: 200px; align-items: center;">{{this.fullName}}</span>
+					<span style="display: flex; width: 300px; align-items: center;">{{this.email}}</span>
+					<span style="display: flex; width: 120px; align-items: center;">{{this.lastConnection}}</span>
+					<span class="user__role" data-role={{this.role}} style="display: flex; width: 120px; align-items: center;">{{this.role}}</span>
+					<div class="change-role__container no-show">
+						<button class="btn-change-role left"><i class="bi bi-caret-left"></i></button>
+						<span class="change" data-role={{this.role}}>{{this.role}}</span>
+						<button class="btn-change-role right"><i class="bi bi-caret-right"></i></button>
+					</div>
+				</div>
+				<div class="card-user__content content-actions">
+					<button class="btn-user-action edit"><i class="bi bi-pencil-fill"></i></button>
+					<button class="btn-user-action delete" data-id={{this._id}}><i class="bi bi-person-dash"></i></button>
+				</div>
+				<div class="card-user__content content-actions no-show">
+					<button class="btn-user-action save" data-id={{this._id}}><i class="bi bi-check"></i></button>
+					<button class="btn-user-action cancel"><i class="bi bi-x"></i></button>
+				</div>
+			</div>
+			{{/each}}
+		{{/if}}
+	</div>
+</div>
+	
+<style>
+	.page__container{
+		padding: 50px 0;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: calc(100vh - 92px);
+		background: #c680ff;
+	}
+	.page__content{
+		padding: 15px;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: max-content;
+		max-width: 1400px;
+	}
+	.card-user__container{
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		margin-bottom: 20px;
+		background: #fff;
+		padding: 10px;
+	}
+	.card-user__content{
+		display: flex;
+		gap: 20px;
+	}
+	.btn-user-action{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 35px;
+		width: 35px;
+		padding: 10px;
+		font-size: 16px;
+		border-radius: 4px;
+		background: #333;
+		color: #fff;
+		border: none;
+		cursor: pointer;
+	}
+	.btn-change-role{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 20px;
+		width: 20px;
+		font-size: 14px;
+		border-radius: 4px;
+		background: none;
+		color: #333;
+		border: none;
+		cursor: pointer;
+	}
+	.change-role__container{
+		display: flex; 
+		width: 120px; 
+		align-items: center;
+	}
+	.change-role__container.no-show,
+	.user__role.no-show,
+	.content-actions.no-show{
+		display: none !important;
+	}
+</style>

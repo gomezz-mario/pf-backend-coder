@@ -1,0 +1,50 @@
+<div class="pagination__container">
+	<div class="pagination__content">
+		{{#if pagination.linkPrevPage}}
+			<a href={{pagination.linkPrevPage}} class="pagination__link"><i class="bi bi-chevron-left"></i> Anterior</a>
+		{{/if}}
+		{{#each pagination.pages}}
+			{{#if this.selected}}
+				<a href="#" class="pagination__item pagination__item--selected">{{this.numberPage}}</a>
+			{{else}}
+				<a href={{this.link}} class="pagination__item">{{this.numberPage}}</a>
+			{{/if}}
+		{{/each}}
+		{{#if pagination.linkNextPage}}
+			<a href={{pagination.linkNextPage}} class="pagination__link">Siguiente <i class="bi bi-chevron-right"></i></a>
+		{{/if}}
+	</div>
+</div>
+
+<style>
+	.pagination__container{
+		width: 100%;
+		padding: 20px;
+		
+	}
+	.pagination__content{
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+	.pagination__item{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 6px;
+		height: 50px;
+		width: 50px;
+		margin: 0 5px;
+		text-decoration: none;
+		border: 1px solid rgb(221, 221, 221);
+		background: #fff;
+	}
+	.pagination__item--selected{
+		background: #440099;
+		color: #fff;
+	}
+	.pagination__link{
+		margin: 0 20px;
+	}
+</style>

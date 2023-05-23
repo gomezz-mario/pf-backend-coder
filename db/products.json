@@ -1,0 +1,30 @@
+[ 
+	{
+		"_id":1,
+		"name": "Zapatilla",
+		"paymentMethod": "ahora_24",
+		"retiralo_ya": true,
+		"llega_maniana": true,
+		"old_price": 49450.00,
+		"discount_percent": 15,
+		"shipping": "envio_gratis",
+		"price": 42299.99,
+		"description": "Adidas X9 son unas zapatillas muy geniales. Muy comodas y confortables. Combinan muy bien con todo. Impermeables ideales para dias de lluvia.",
+		"thumbnails": ["https://media.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-adidas-forum-low-blanca-70731530-10001efy7755001-1.jpg"],
+		"category": "calzado"
+	},
+	{
+		"_id":2,
+		"name": "Zapatilla",
+		"paymentMethod": "ahora_24",
+		"retiralo_ya": true,
+		"llega_maniana": true,
+		"old_price": 49450.00,
+		"discount_percent": 10,
+		"shipping": "envio_gratis",
+		"price": 52000,
+		"description": "Adidas X9 son unas zapatillas muy geniales. Muy comodas y confortables. Combinan muy bien con todo. Impermeables ideales para dias de lluvia.",
+		"thumbnails": ["https://media.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-adidas-forum-low-blanca-70731530-10001efy7755001-1.jpg"],
+		"category": "calzado"
+	}
+]

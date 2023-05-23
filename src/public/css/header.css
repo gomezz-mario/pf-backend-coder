@@ -1,0 +1,67 @@
+.header__container{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	padding: 10px 0;
+	color: white;
+	background: #440099;
+}
+.header__content{
+	display: flex;
+	max-width: 1400px;
+	width: 100%;
+}
+.header__content.bottom{
+	gap: 25px;
+}
+.header__content.top{
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+.login__container{
+	display: flex;
+	gap: 15px;
+}
+.address__container{
+	display: flex; 
+	justify-content: flex-start; 
+	align-items: flex-end;
+}
+.owner__container,
+.shopp__container,
+.profile__container,
+.admin__container{
+	display: flex; 
+	align-items: flex-end; 
+	font-size: 14px; 
+	gap: 15px;
+}
+.header__link{
+	text-decoration: none;
+	color: goldenrod;
+}
+.profile__container{
+	position: relative;
+}
+#icon-arrow{
+	cursor: pointer;
+}
+.profile__menu{
+	position: absolute;
+	top:55px;
+	display: flex;
+	padding: 5px;
+	gap: 5px;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: max-content;
+	min-width: 200px;
+	background: #FFF;
+	z-index: 10;
+}
+.profile__menu.no-show{
+	display: none;
+}

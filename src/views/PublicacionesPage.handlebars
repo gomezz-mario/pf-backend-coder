@@ -1,0 +1,141 @@
+{{> Header}}
+<div class="page__container">
+	<div class="page__content">
+		{{#if myproducts.length}}
+			<div class="gallery-products__container">
+				<div class="gallery-products__content">
+					{{#each myproducts}}
+						<div class="card-product">
+							<div class="product-image__container">
+								<img src={{this.thumbnails}} alt={{this._id}} class="product__image">
+							</div>
+							<div class="product-data__container">
+								<span class="product__title">{{this.title}}</span>
+								<span class="product__description">{{this.description}}</span>
+							</div>
+							<div class="product-quanitity__container">
+								<span>{{this.stock}} unidades disponibles</span>
+							</div>
+							<div class="actions__container">
+								<a href="/views/my-products/edit/{{this._id}}" class="btn-link btn-edit">Editar</a>
+								<button class="btn-link btn-delete" data-id={{this._id}}>Eliminar</button>
+							</div>
+						</div>
+					{{/each}}
+				</div>
+				<div style="display: flex; width: 100%; justify-content: center; margin-top: 15px;">
+					<a style="color: #fff; cursor: pointer;" href='/views/my-products/new-product'>Nueva publicación.</a>
+				</div>
+			</div>
+		{{else}}
+			<div class="no_publicaciones__container">
+				<span>Aún no tienes publicaciones.</span>
+				<a href='/views/my-products/new-product'>Publicar ahora.</a>
+			</div>	
+		{{/if}}
+	</div>
+</div>
+
+<style>
+	.page__container{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: calc(100vh - 92px);
+		background: #c680ff;
+	}
+	.page__content{
+		display: flex;
+		width: 100%;
+		max-width: 1400px;
+		
+		height: max-content;
+		margin-top: 50px;
+	}
+	.no_publicaciones__container{
+		display: flex; 
+		flex-direction: column; 
+		align-items: center; 
+		gap: 10px; 
+		padding: 10px; 
+		width: 100%;
+	}
+	.no_publicaciones__container a{
+		cursor: pointer;
+		color: #fff;
+	}
+	.gallery-products__content{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		gap: 10px;
+		width: 100%;
+	}
+	.card-product{
+		display: flex;
+		padding: 10px;
+		width: 100%;
+		background: #fff;
+		border-radius: 6px;
+	}
+	.product-image__container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
+		width: 100px;
+		height: 100px;
+	}
+	.product__image{
+		width: auto;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	.product-data__container{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		width: 100%;
+	}
+	.product__title{
+		font-size: 20px;
+		font-weight: 500;
+		color: #000;
+	}
+	.product__description{
+		margin-top: 5px;
+		font-size: 15px;
+		font-weight: normal;
+		line-height: 20px;
+		height: 62px;
+		letter-spacing: -0.18px;
+		overflow: hidden;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		padding-top: 5px !important;
+	}
+	.product-quanitity__container{
+		display: flex;
+		width: 400px;
+	}
+	.actions__container{
+		display: flex;
+		gap: 10px;
+		padding: 0 10px;
+		justify-content: space-between;
+	}
+	.btn-link{
+		display: flex;
+		color: #440099;
+		font-size: 14px;
+		border: none;
+		background: none;
+		outline: none;
+		cursor: pointer;
+	}
+</style>

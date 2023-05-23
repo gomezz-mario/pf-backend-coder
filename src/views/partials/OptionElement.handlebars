@@ -1,0 +1,39 @@
+<a href={{this.link}}>
+	<div class="option-element__content" style="margin-bottom: 5px;">
+		{{#if this.selected}}
+			{{#if this.circleType}}
+				<i class="bi bi-check-circle-fill"></i>
+			{{else}}
+				<i class="bi bi-check-square-fill"></i>
+			{{/if}}
+		{{else}}
+			{{#if this.circleType}}
+				<i class="bi bi-circle"></i>
+			{{else}}
+				<i class="bi bi-square"></i>
+			{{/if}}
+		{{/if}}
+		<span>{{this.description}}</span>
+	</div>
+</a>
+
+<style>
+	a{
+		color: #000000;
+	}
+	.option-element__content{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 0px 5px;
+	}
+	.option-element__content i{
+		color:#440099;
+		margin-right: 4px;
+		font-size: 16px;
+	}
+	.option-element__content span{
+		font-size: 16px;
+		color: #000000;
+	}
+</style>

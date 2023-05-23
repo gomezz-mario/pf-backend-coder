@@ -1,0 +1,37 @@
+{{> Header}}
+<div class="product-details__container">
+	<div class="product-details__content">
+		<!-- PRODUCT DETAILS IMAGE -->
+		<div class="product-details__image__container">
+			<div class="product-details__image__content">
+				{{#if this.product.paymentMethod}}
+				<img style="position: absolute; left:5px; bottom:5px;" src="/images/{{this.product.paymentMethod}}.webp" alt={{this.paymentMethod}}>
+				{{/if}}
+				{{#if this.product.shipping}}
+				<img style="position: absolute; left:5px; top:5px;" src="/images/{{this.product.shipping}}.webp" alt={{this.shipping}}>
+				{{/if}}
+				<img style="width: 100%; height: 100%; object-fit: cover; object-position: center;" src={{this.product.thumbnails}} alt={{this.product.title}}>
+			</div>
+		</div>
+		<!-- PRODUCT DETAILS DETAILS -->
+		<div class="product-details__details__container">
+			<div class="product-details__details__content">
+				<h2 class="product-details__title">{{this.product.title}}</h2>
+				<span class="product-details__description">{{this.product.description}}</span>
+				<div class="product-details-price__container">
+					<div>
+						<span class="tag-old-price">${{this.product.old_price}}</span>
+						<span class="tag-discount">{{this.product.discount_percent}}% OFF</span>
+					</div>
+					<span class="tag-price">${{this.product.price}}</span>
+				</div>
+				<div class="expanded"></div>
+				<button id="btn-add-to-cart" data-product-id={{this.product._id}}>COMPRAR</button>
+				{{#if this.admin}}
+					<button id="btn-delete" data-product-id={{this.product._id}}>ELIMINAR</button>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</div>
+

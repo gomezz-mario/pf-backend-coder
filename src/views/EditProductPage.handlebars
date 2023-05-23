@@ -1,0 +1,118 @@
+{{> Header}}
+<div class="page__container">
+	<div class="page__content">
+		<form class="form__container" id="form-product">
+			<div class="form__content">
+				<h3 class="form__title">Editar publicación</h3>
+				<div class="fields">
+					<div class="field__container">
+						<label>Título</label>
+						<div class="field">
+							<input type="text" placeholder="Ingresa un título" name="title" value={{product.title}}>
+						</div>
+					</div>
+					<div class="field__container">
+						<label>Categoría</label>
+						<div class="field">
+							<select name="category">
+								<option value="celulares">Celulares</option>
+								<option value="notebooks">Notebooks</option>
+								<option value="accesorios">Accesorios</option>
+							</select>
+						</div>
+					</div>
+					<div class="field__container">
+						<label>Descripción</label>
+						<div class="field-text-area">
+							<textarea placeholder="Ingresa una descripción" name="description" cols="30" rows="10">{{product.description}}</textarea>
+						</div>
+					</div>
+					<div class="field__container">
+						<label>Imagen</label>
+						<div class="field">
+							<input type="url" placeholder="Ingresa una url" name="image" value={{product.thumbnails}}>
+						</div>
+					</div>
+					<div class="field__container">
+						<label>Precio final</label>
+						<div class="field">
+							<input min="0" type="number" placeholder="Ingresa el precio del producto" name="price" value={{product.price}}>
+						</div>
+					</div>
+					<div class="field__container">
+						<label>Descuento</label>
+						<div class="field">
+							<select name="discount_percent">
+								<option value="0">0%</option>
+								<option value="5">5%</option>
+								<option value="10">10%</option>
+								<option value="15">15%</option>
+								<option value="20">20%</option>
+								<option value="25">25%</option>
+								<option value="30">30%</option>
+								<option value="35">35%</option>
+								<option value="40">40%</option>
+							</select>
+						</div>
+					</div>
+					<div class="field__container">
+						<label>Financiación</label>
+						<div class="field">
+							<select name="cuotas">
+								<option value="0">Contado</option>
+								<option value="3">Tres cuotas</option>
+								<option value="6">Seis cuotas</option>
+								<option value="12">Doce cuotas</option>
+								<option value="24">Veinticuatro cuotas</option>
+							</select>
+						</div>
+					</div>
+					<div class="field__container">
+						<label>Stock</label>
+						<div class="field">
+							<input type="number" placeholder="Ingresa unidades disponibles" name="stock" min="0" max="24" value={{product.stock}}>
+						</div>
+					</div>
+					<div class="form__buttons">
+						<button id="btn-update" data-id={{product._id}}>Actualizar</button>
+					</div>
+				</div>
+				
+			</div>
+		</form>
+	</div>
+</div>
+
+<style>
+	.page__container{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: calc(100vh - 92px);
+		background: #c680ff;
+	}
+	.page__content{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		max-width: 1400px;
+		height: max-content;
+		margin-top: 100px;
+	}
+	.form__container{
+		max-width: 800px;
+	}
+	.fields{
+		flex-wrap: wrap;
+		height: 400px;
+	}
+	.field__container{
+		width: calc(50% - 40px);
+	}
+	.form__buttons{
+		width: calc(50% - 40px);
+	}
+	#btn-publicar{
+		width: 120px;
+	}
+</style>
