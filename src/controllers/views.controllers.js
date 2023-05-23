@@ -138,25 +138,35 @@ export const renderHome = async(request, response) => {
 		premium: user && (user.role === "premium" || user.role === "admin"),
 		categories: [
 			{
-				title: "Calzado",
-				image: "https://media.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-adidas-forum-low-blanca-70731530-10001efy7755001-1.jpg",
-				link: "/views/categories/?category=calzado"
+				title: "Notebooks",
+				image: "https://http2.mlstatic.com/D_NQ_NP_745797-MLA69340654813_052023-O.webp",
+				link: "/views/categories/?category=notebooks"
 			},
 			{
 				title: "Celulares",
-				image: "https://http2.mlstatic.com/D_NQ_NP_693415-MLA31002769308_062019-O.webp",
+				image: "https://http2.mlstatic.com/D_NQ_NP_885487-MLA52731088598_122022-O.webp",
 				link: "/views/categories/?category=celulares"
 			},
 			{
-				title: "Calzado",
-				image: "https://media.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-adidas-forum-low-blanca-70731530-10001efy7755001-1.jpg",
-				link: "/views/categories/?category=calzado"
+				title: "Tablets",
+				image: "https://http2.mlstatic.com/D_NQ_NP_870191-MLA51468993998_092022-O.webp",
+				link: "/views/categories/?category=tablets"
 			},
 			{
-				title: "Calzado",
-				image: "https://media.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-adidas-forum-low-blanca-70731530-10001efy7755001-1.jpg",
-				link: "/views/categories/?category=calzado"
-			}
+				title: "Parlantes",
+				image: "https://http2.mlstatic.com/D_NQ_NP_890096-MLA69414222576_052023-O.webp",
+				link: "/views/categories/?category=parlantes"
+			},
+			{
+				title: "Auriculares",
+				image: "https://http2.mlstatic.com/D_NQ_NP_900109-MLA50636252333_072022-O.webp",
+				link: "/views/categories/?category=auriculares"
+			},
+			{
+				title: "Accesorios",
+				image: "https://http2.mlstatic.com/D_NQ_NP_878309-MLA40733131990_022020-O.webp",
+				link: "/views/categories/?category=accesorios"
+			},
 		],
 	})
 }
@@ -247,7 +257,6 @@ export const renderEditProductPage = async(request, response) => {
 		product
 	})
 }
-
 export const renderAdminPage = async(request, response) => {
 	const user = request.session.user;
 	const allUsers = request.body.allUsers;//TODOS LOS USUARIOS QUE NO SEAN ADMINS ?
